@@ -186,19 +186,18 @@ body{
     padding: 0 150px ;
 }
 .home-sec{
-    padding-top:120px;
+    padding-top:40px;
     width: 50%;
 }
 .home-sec1{
     width: 100%;
     height: 50vh;
-    font-size:2rem;
+    font-size:1.8rem;
     font-weight: 700;
     line-height: 1;
 }
 .home-sec1 h1{
-    color: rgba(246, 102, 227, 0.881);
-
+    color: rgba(247, 73, 224, 0.986);
 }
 
 #element{
@@ -217,7 +216,7 @@ body{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 0px 25px 40px 0;
+    margin: 30px 25px 40px 0;
     background-color: transparent;
     color: #0ef;
     border: 2px solid #0ef;
@@ -521,7 +520,6 @@ h3{
     background-color:white;
     width: 350px;
     position: relative;
-    cursor: pointer;
     border-radius: 8px;
     box-shadow: 5px 5px 20px #363635f7,5px 5px 20px #4b4747f7;
     transition:al 8s ease-in-out;
@@ -555,9 +553,11 @@ h3{
 
 .layer h5{
     font-size: 25px;
-    color: #000;
+    color: blue;
+    text-decoration: underline;
     font-weight: 600;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 .layer p{
     font-size: 1.3rem;
@@ -878,14 +878,14 @@ h3{
         margin: 10px;
     }
     .home-sec1 h3{
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
     .home-sec1 p{
         font-size: 1rem;
     }
 
     .home-sec1 {
-        font-size: 1rem;
+        font-size: 1.2rem;
     }
     .home-sec2 a{
         margin-top: 60%;
