@@ -7,22 +7,19 @@
     <link rel="webside icon" type="png" href="html.png">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
 
     <div class="main">
-
         <header class="header">
             <a href="" class="logo">Portfolio</a>
             <nav class="navbar">
                 <a href="#home" >Home</a>
                 <a href="#about">About</a>
-                <a href="#skill">Skill</a>
-                <a href="#project">Project</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
                 <a href="#contect">Contect</a>
                 <div class="toggle">
                     <i class="fa-solid fa-moon toggle-icon"></i>
@@ -30,8 +27,27 @@
                     <div class="toggle-ball toggle-icon"></div>
                 </div>
             </nav>
+            <div class="menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
         </header>
-    
+
+
+        <div class="sidebarsection">
+            <div class="sidebar"> 
+                <h2 class="sidebarlogo">MyPortfolio</h2>
+                <i class=" close-btn fa-solid fa-xmark"></i>
+                <ul class="nav">
+                    <li><a href="#home" class="active"> <i class='bx bx-home'></i> Home</a></li>
+                    <li><a href="#about"><i class='bx bx-user'></i> About</a></li>
+                    <li><a href="#skills"><i class='bx bx-brain'></i> Skills</a></li>
+                    <li><a href="#projects"><i class='bx bx-folder'></i>  Projects</a></li>
+                    <li><a href="#contect"><i class='bx bx-contact'></i>  Contect</a></li>
+                </ul>
+            </div>
+        </div>
+
+
         <section class="home" id="home">
             <div class="home-sec"> 
                 <div class="home-sec1">
@@ -47,10 +63,8 @@
                     <a target="_blank" href="https://www.instagram.com/avesh_maurya_123/?hl=en"><i class='bx bxl-instagram'></i></a>
                 </div>
                 <a href="resume.pdf" target="_blank" class="btn-box">Download CV</a>
-            </div>
-            <div class="img">
-                <!-- <img src="photo.jpg" alt=""> -->
-            </div>
+            </div> 
+            <div class="img"> </div>
         </section>
     
         <section class="about" id="about">
@@ -94,7 +108,7 @@
         </section>
     
     
-        <section class="skill" id="skill">
+        <section class="skill" id="skills">
             <h1>Technical Skill</h1>
             <div class="contener">
                 <div class="technical-bar">
@@ -166,8 +180,8 @@
     
         
         <section>
-            <div class="Portfolio" id="project">
-                <div class="main-port" id="project">
+            <div class="Portfolio" id="projects">
+                <div class="mainport" id="project">
                     <h2>Latest <span>project</span></h2>
                     <div class="profile-content">
                         <div class="image">
@@ -208,7 +222,7 @@
                     You can also fill out the form below, and I will get back to you as soon as possible! 😊
                 </p>
                 <div class="contect-us">
-                    <li><i class='bx bx-mail-send'></i>mauryaavesh9453@gmail.com</li>
+                    <li><i class='bx bx-mail-send '></i>mauryaavesh9453@gmail.com</li>
                     <li><i class='bx bx-phone'></i>Mobiel No:-91:9453201921</li>
                     <li><i class='bx bxl-whatsapp'></i>Whatsapp No:-91:9453201921</li>
                 </div>
@@ -231,9 +245,7 @@
                     <div class="cheak">
                         <input type="checkbox" class="cheakbox" id="clint">
                         <label for="clint">I want you to work on a project with me</label>
-                    </div>
-                    <!-- <textarea name="" cols="5" rows="5" placeholder="helo"></textarea> -->
-                    
+                    </div>                    
                     <input class="send" type="submit" value="Submit">
                 </form>
             </div>
@@ -243,22 +255,34 @@
         <div class="text">
             <p>Developed with love by avesh © 2025</p>
         </div>
-        <a href="#home" class="top"><i class="bx bx-up-arrow-alt"></i></a>
-
+        <a href="" class="top"><i class="bx bx-up-arrow-alt"></i></a>
     </div>
 
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script>
-        const scroll = new LocomotiveScroll({
-        el: document.querySelector('.main'),
-        smooth: true,
-        lerp:0.05        // 0 and 1 ke bich me rahega jitana com utna smooth hoga
+        let menu = document.querySelector(".menu");
+        let sidebarsection = document.querySelector(".sidebarsection");
+        let sidebar = document.querySelector(".sidebar");
+        let closeBtn = document.querySelector(".close-btn");
+
+        // Open sidebar
+        menu.addEventListener("click", () => {
+            sidebarsection.style.display = "block";
+            setTimeout(() => {
+                sidebar.classList.add("show");
+            }, 1);
         });
+
+        // Close sidebar
+        closeBtn.addEventListener("click", () => {
+            sidebar.classList.remove("show");
+            sidebarsection.style.display = "none";
+        });
+
+
 
         var typed = new Typed('#element', {
         strings: ['<i>Web</i> Developer.', '&amp; Backend Develop.', 'Full Stack Development.'],
@@ -275,5 +299,6 @@
         toggleball.classList.toggle("active")
         })
     </script>
+
 </body>
 </html>

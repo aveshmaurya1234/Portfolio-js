@@ -6,13 +6,10 @@
     scroll-behavior: smooth;
     box-sizing: border-box;
     font-family: "Schibsted Grotesk", sans-serif;
-    /* background-color: gray; */
-
 }
 body{
     background-color: rgb(91, 203, 234);
 }
-
 .header{
     position: fixed;
     top: 0;
@@ -31,6 +28,7 @@ body{
     text-decoration: none;
     font-weight: 700;
     color:white;
+    letter-spacing: 1px;
     transition: all 0.5s ease-in-out;
 }
 
@@ -98,6 +96,81 @@ body{
 }
 
 
+
+/* sidebar */
+
+
+.sidebarsection{
+    display: none;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    z-index: 999;
+    right: -210px;
+    width: 200px;
+    background: #2c3e50;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    height: 100%;
+}
+
+.close-btn{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 23px;
+}
+
+.sidebar.show {
+    right: 0;
+}
+
+.sidebarlogo {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 1.3em;
+    letter-spacing: 1px;
+}
+
+.nav {
+  list-style: none;
+  width: 100%;
+}
+
+.nav li {
+  width: 100%;
+}
+
+.nav a {
+  display: block;
+  width: 100%;
+  padding: 12px 25px;
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.nav a:hover,
+.nav a.active {
+  background: #34495e;
+}
+
+.menu{
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+
+
                                  /*      Home page          */
 
 
@@ -106,9 +179,7 @@ body{
     width: 100%;
     height: 100vh;
     color:black;
-    /* background: linear-gradient(rgba(0,0,0,0.1),#000); */
     background: linear-gradient(rgb(91, 203, 234),rgba(0,0,0,0.1),black);
-    /* background-color: #111111; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -146,7 +217,7 @@ body{
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    margin: 50px 25px 40px 0;
+    margin: 0px 25px 40px 0;
     background-color: transparent;
     color: #0ef;
     border: 2px solid #0ef;
@@ -256,7 +327,12 @@ hr{
     position: relative;
     top: -55px;
     left: -15px;
-
+}
+ .imag{
+    width: 50px;
+    position: relative;
+    top: 5px;
+    left: -15px;
 }
 .title{
     position: relative;
@@ -419,15 +495,15 @@ h3{
     min-height: 100vh;
     background-color:white;
 }
-.main-port{
+.mainport{
     padding-top: 90px;
 }
-.main-port h2{
+.mainport h2{
     font-size: 60px;
     text-align:center;
     color: #000;
 }
-.main-port h2 span{
+.mainport h2 span{
     color: #0ef;
 }
 
@@ -502,7 +578,7 @@ h3{
 
 .contect{
     color: white;
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     /* align-items: center; */
     background-color:#111111;
@@ -640,7 +716,7 @@ h3{
 }
 .text{
     width: 100%;
-    height: 60px;
+    height: 30px;
     text-align: center;
     /* line-height: 50px; */
     font-weight: 300;
@@ -766,7 +842,12 @@ h3{
 }
 
 /* Responsive for mobile devices */
+
 @media (max-width: 768px) {
+
+    .menu{
+        display: block;
+    }
     .logo {
         font-size: 1.8rem;
         margin-left: 10px;
@@ -796,15 +877,58 @@ h3{
     .toggle {
         margin: 10px;
     }
+    .home-sec1 h3{
+        font-size: 1rem;
+    }
+    .home-sec1 p{
+        font-size: 1rem;
+    }
 
+    .home-sec1 {
+        font-size: 1rem;
+    }
+    .home-sec2 a{
+        margin-top: 60%;
+    }
     .home .img {
+        position: absolute;
+        top: 50%;
         width: 250px;
         height: 250px;
     }
 
-    .home-sec1 {
-        font-size: 1.5rem;
+    /* about */
+
+    .secondsection .vertical{
+        height: 100%;
+        width: 100%;
+        background-color: white;
+        border-radius: 7px;
+        padding: 5px 15px;
     }
+
+    .imag{
+        width: 50px;
+        padding: 5px;
+    }
+    .title{
+        position: relative;
+        top: 0px;
+        color: #000;
+        width: 100%;
+        padding: 5px;
+        font-weight: 600;
+    }
+    .title2{
+        position: relative;
+        top: 0px;
+        color: gray;
+        font-size: 12px;
+        width: 100%;
+        padding: 5px;
+    }
+
+    
 
     .contener2 {
         width: 100%;
@@ -823,9 +947,29 @@ h3{
         font-size: 20px;
     }
 
+    .contect{
+        padding: 0;
+    }
+
     .contect-form form {
         width: 100%;
         padding: 0;
+    }
+
+    .contect-text h2{
+        font-size: 2.5rem;
+    }
+    .contect-text h3{
+        font-size: 2rem;
+    }
+    .contect-text p{
+        font-size: .8rem;
+    }
+    .contect-us li{
+        font-size: 15px;
+    }
+    .contect-us .bx{
+        font-size: 20px;
     }
 
     .text {
